@@ -4,6 +4,8 @@
   #  https://support.google.com/domains/answer/6147083
 
 # How to:
+# 0 - Requeriments: sudo apt -y install curl
+
 # 1 - Save file:
   #   wget -c /home/$USER/ https://raw.githubusercontent.com/lucas-apd/scripts/main/google_domain_ddns.sh 
 # 2 - Permission set: 
