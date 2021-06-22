@@ -9,6 +9,8 @@
 #   chmod +x /home/$USER/google_domain_ddns.sh
 # 3 - Create a cronjob for auto update (every 30 minutes):
 #   { crontab -l; echo "*/30 * * * * /home/$USER/google_domain_ddns.sh"; } | crontab -
+# 4 - Edit personal information:
+#   cd /home/$USER/ && vi google_domain_ddns.sh
 
 USERNAME=""
 PASSWORD=""
