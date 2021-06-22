@@ -1,8 +1,9 @@
 #!/bin/bash
-
 # Cloudflare provides an API to update a DNS
 
 # How to:
+# 0 - Requeriments: sudo apt -y install jq
+
 # 1 - Save file:
   #   wget -c /home/$USER/ https://raw.githubusercontent.com/lucas-apd/scripts/main/cloudflare_ddns.sh 
 # 2 - Permission set: 
@@ -29,7 +30,7 @@ ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$zone&
   -H "X-Auth-Key: $CLOUDFLARE_AUTH_KEY" \
   -H "Content-Type: application/json" | jq -r '{"result"}[] | .[0] | .id')
 
-echo "Zoneid for $zone is $zoneid"
+echo "Zoneid for $DNS_ZONE is $ZONE_ID"
 
 # Get the dns record id
 DNS_RECORD=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/" \
