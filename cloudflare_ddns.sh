@@ -2,7 +2,7 @@
 # Cloudflare provides an API to update a DNS
 
 # How to:
-# 0 - Requeriments: sudo apt -y install jq
+# 0 - Requeriments: sudo apt -y install curl jq
 
 # 1 - Save file:
   #   wget -c /home/$USER/ https://raw.githubusercontent.com/lucas-apd/scripts/main/cloudflare_ddns.sh 
