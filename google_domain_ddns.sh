@@ -1,7 +1,7 @@
 #!/bin/bash
 # Google Domains provides an API to update a DNS:
 # First, create a entry and user/password:
-  #  ttps://support.google.com/domains/answer/6147083
+  #  https://support.google.com/domains/answer/6147083
 
 # How to:
 # 1 - Save file:
@@ -11,7 +11,7 @@
 # 3 - Create a cronjob for auto update (every 30 minutes):
   #   { crontab -l; echo "*/30 * * * * /home/$USER/google_domain_ddns.sh"; } | crontab -
 # 4 - Edit personal information:
-  #   cd /home/$USER/ && vi google_domain_ddns.sh
+  #   vi /home/$USER/google_domain_ddns.sh
 
 # Start changing... 
 
