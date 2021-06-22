@@ -10,7 +10,7 @@
 # 3 - Create a cronjob for auto update (every 30 minutes):
 #   { crontab -l; echo "*/30 * * * * /home/$USER/cloudflare_ddns.sh"; } | crontab -
 # 4 - Edit personal information:
-#   cd /home/$USER/ && vi cloudflare_ddns.sh
+#   vi /home/$USER/cloudflare_ddns.sh
 
 # Start changing... 
 DNS_ZONE=example.com
@@ -29,7 +29,7 @@ ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$zone&
 
 echo "Zoneid for $zone is $zoneid"
 
-# get the dns record id
+# Get the dns record id
 DNS_RECORD=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_AUTH_KEY" \
@@ -37,7 +37,7 @@ DNS_RECORD=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID
 
 echo "DNSrecordid for $DNS_RECORD is $DNS_RECORD_ID"
 
-# update the record
+# Update the record
 curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$DNS_RECORD_ID" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_AUTH_KEY" \
