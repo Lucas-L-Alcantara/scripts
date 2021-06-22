@@ -4,19 +4,21 @@
 
 # How to:
 # 1 - Save file:
-#   wget -c /home/$USER/ https://raw.githubusercontent.com/lucas-apd/scripts/main/cloudflare_ddns.sh 
+  #   wget -c /home/$USER/ https://raw.githubusercontent.com/lucas-apd/scripts/main/cloudflare_ddns.sh 
 # 2 - Permission set: 
-#   chmod +x /home/$USER/cloudflare_ddns.sh
+  #   chmod +x /home/$USER/cloudflare_ddns.sh
 # 3 - Create a cronjob for auto update (every 30 minutes):
-#   { crontab -l; echo "*/30 * * * * /home/$USER/cloudflare_ddns.sh"; } | crontab -
+  #   { crontab -l; echo "*/30 * * * * /home/$USER/cloudflare_ddns.sh"; } | crontab -
 # 4 - Edit personal information:
-#   vi /home/$USER/cloudflare_ddns.sh
+  #   vi /home/$USER/cloudflare_ddns.sh
 
 # Start changing... 
+
 DNS_ZONE=example.com
 DNS_ENTRY=sub
 CLOUDFLARE_EMAIL=example@mail.com
 CLOUDFLARE_AUTH_KEY=111aaa222bbb333ccc444ddd555 # your GLOBAL API KEY from https://dash.cloudflare.com/profile/api-tokens
+
 # Stop!
 
 PUBLIC_IP=$(curl -s https://checkip.amazonaws.com)
