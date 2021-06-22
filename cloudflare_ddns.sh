@@ -30,15 +30,11 @@ ZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$zone&
   -H "X-Auth-Key: $CLOUDFLARE_AUTH_KEY" \
   -H "Content-Type: application/json" | jq -r '{"result"}[] | .[0] | .id')
 
-echo "Zoneid for $DNS_ZONE is $ZONE_ID"
-
 # Get the dns record id
 DNS_RECORD=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/" \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   -H "X-Auth-Key: $CLOUDFLARE_AUTH_KEY" \
   -H "Content-Type: application/json" | jq -r '{"result"}[] | .[0] | .id')
-
-echo "DNSrecordid for $DNS_RECORD is $DNS_RECORD_ID"
 
 # Update the record
 curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$DNS_RECORD_ID" \
